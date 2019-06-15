@@ -27,6 +27,9 @@
 </template>
 
 <script>
+import Promise from 'promise-polyfill'
+import {fetch as fetchPolyfill} from 'whatwg-fetch'
+
 export default {
   name: "Servers",
   data: function() {
@@ -36,7 +39,7 @@ export default {
   },
   methods: {
     refreshServerList: function() {
-      fetch("http://111.73.45.28:8089/server/list")
+      fetch("http://api.hanaworks.cc/server/list")
         .then(response => response.json())
         .then(data => (this.server = data));
     },

@@ -27,12 +27,12 @@
           <tr>
             <td>服务器地址</td>
             <td class="control">
-              <span class="btn btn-join orange" title="点击进入服务器" @click="this.join(server)">{{ server.info.address }}</span>
+              <span class="btn btn-join orange" title="点击进入服务器" @click="join(server)">{{ server.info.address }}</span>
             </td>
           </tr>
         </table>
         <div class="info-item map-preview">
-          <img :src="`/static/Images/${server.info.map}.jpg`" :alt="server.info.map">
+          <img :src="`http://s1-static.hanaworks.cc/images/small/${server.info.map}.jpg`" :alt="server.info.map">
         </div>
       </div>
       <!-- <hr class="detail-split" /> -->
@@ -59,6 +59,9 @@
 </template>
 
 <script>
+import Promise from 'promise-polyfill/src/polyfill';
+import {fetch as fetchPolyfill} from 'whatwg-fetch'
+
 export default {
   name: "ServerDetail",
   data: function() {
@@ -70,12 +73,12 @@ export default {
   },
   methods: {
     refreshDetail: function(server) {
-      fetch("http://111.73.45.28:8089/server/detail/?address=" + server)
-      //fetch("http://localhost:60390/server/detail?address=" + server)
+      fetch("http://api.hanaworks.cc/server/detail/?address=" + server)
         .then(response => response.json())
         .then(data => (this.server = data));
     },
     join: function(server) {
+      console.log(server);
       window.location.href = "steam://connect/" + server.info.address;
     }
   },
