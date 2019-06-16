@@ -10,6 +10,10 @@
 	color: #333;
 }
 
+body {
+	background-color: #fff;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -340,39 +344,45 @@ a {
 	cursor: pointer;
 }
 
-@media screen and (max-width: 1100px) {
+.game-margin {
+	display: none;
+	height: 70px;
+}
+
+.in-game .list .btn.btn-join {
+	display: none;
+}
+
+.in-game .game-margin {
+	display: block;
+}
+
+.in-game .list-container::before {
+	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.server .list-cell {
+		padding: 20px 10px;
+	}
+
 	.server {
 		font-size: 15.9px;
 	}
 }
 
-
-@media screen and (max-width: 1024px) {
-	.server {
-		font-size: 16px;
-	}
-
-	.server.list-item .address {
-		display: none;
-	}
-
+@media screen and (max-width: 850px) {
 	.server .list-cell {
-		padding: 10px;
+		padding: 10px 5px;
 	}
-}
 
-@media screen and (max-width: 750px) {
 	.server {
 		font-size: 14px;
 	}
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
 	.server {
 		font-size: 12px;
-	}
-
-	.server .list-cell {
-		padding: 10px 5px;
 	}
 }

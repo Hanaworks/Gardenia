@@ -10,17 +10,26 @@ export default new Router({
 		{
 			path: '/',
 			name: 'Index',
-			component: Servers
+			component: Servers,
+			meta: {
+				title: 'Hanaworks 服务器列表'
+			}
 		},
 		{
 			path: '/Server',
 			name: 'Server',
-			component: Servers
+			component: Servers,
+			meta: {
+				title: 'Hanaworks 服务器列表'
+			}
 		},
 		{
 			path: '/Server/:address',
 			name: 'ServerDetail',
-			component: ServerDetail
+			component: ServerDetail,
+			meta: {
+				title: '服务器详情'
+			}
 		}
 	]
 })

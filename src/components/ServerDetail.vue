@@ -1,6 +1,4 @@
 <template>
-  <div>
-    <div class="title">服务器详情</div>
     <div class="server-detail">
       <div class="server-info">
         <table class="info-item info-table">
@@ -27,12 +25,19 @@
           <tr>
             <td>服务器地址</td>
             <td class="control">
-              <span class="btn btn-join orange" title="点击进入服务器" @click="join(server)">{{ server.info.address }}</span>
+              <span
+                class="btn btn-join orange"
+                title="点击进入服务器"
+                @click="join(server)"
+              >{{ server.info.address }}</span>
             </td>
           </tr>
         </table>
         <div class="info-item map-preview">
-          <img :src="`http://s1-static.hanaworks.cc/images/small/${server.info.map}.jpg`" :alt="server.info.map">
+          <img
+            :src="`http://s1-static.hanaworks.cc/images/small/${server.info.map}.jpg`"
+            :alt="server.info.map"
+          >
         </div>
       </div>
       <!-- <hr class="detail-split" /> -->
@@ -46,7 +51,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="player in server.players">
+            <tr v-for="player in server.players" :key="player.name">
               <td class="list-cell rank">{{ player.name }}</td>
               <td class="list-cell auth">{{ player.score }}</td>
               <td class="list-cell time">{{ player.time }}</td>
@@ -55,20 +60,19 @@
         </table>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Promise from 'promise-polyfill/src/polyfill';
-import {fetch as fetchPolyfill} from 'whatwg-fetch'
+import Promise from "promise-polyfill/src/polyfill";
+import { fetch as fetchPolyfill } from "whatwg-fetch";
 
 export default {
   name: "ServerDetail",
   data: function() {
     return {
       server: {
-		  info: {}
-	  }
+        info: {}
+      }
     };
   },
   methods: {
