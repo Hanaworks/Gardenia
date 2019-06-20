@@ -16,6 +16,7 @@ export default {
       userAgent.indexOf("Valve Half-Life") != -1;
 
       this.rendermode = isGameBrowser ? 'in-game' : 'browser';
+      
   }
 };
 </script>
