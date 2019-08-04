@@ -1,7 +1,13 @@
 @font-face {
 	font-family: SourceHanSans;
-	src: url(./SourceHanSansSC/SourceHanSansSC-Normal.otf);
-}
+	font-display: swap;
+	src: url('//at.alicdn.com/t/webfont_lenvn1uqbu.eot'); /* IE9*/
+	src: url('//at.alicdn.com/t/webfont_lenvn1uqbu.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('//at.alicdn.com/t/webfont_lenvn1uqbu.woff2') format('woff2'),
+	url('//at.alicdn.com/t/webfont_lenvn1uqbu.woff') format('woff'), /* chrome、firefox */
+	url('//at.alicdn.com/t/webfont_lenvn1uqbu.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	url('//at.alicdn.com/t/webfont_lenvn1uqbu.svg#思源黑体-普通') format('svg'); /* iOS 4.1- */
+  }
 
 * {
 	font-family: SourceHanSans, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
@@ -209,20 +215,16 @@ a {
     background-size: cover;
 }
 
-.list tbody tr:nth-child(1) {
-    /*background: linear-gradient(to right, #ce91091c, #fff);*/
-}
-
 .list tbody tr.record:nth-child(1) td.rank::before {
-    background-image: url('../Images/top1.png');
+    background-image: url('http://s1-static.hanaworks.cc/images/rank/top1.png');
 }
 
 .list tbody tr.record:nth-child(2) td.rank::before {
-	background-image: url('../Images/top2.png');
+	background-image: url('http://s1-static.hanaworks.cc/images/rank/top2.png');
 }
 
 .list tbody tr.record:nth-child(3) td.rank::before {
-	background-image: url('../Images/top3.png');
+	background-image: url('http://s1-static.hanaworks.cc/images/rank/top3.png');
 }
 
 .rank-profile {
@@ -242,10 +244,6 @@ a {
 	vertical-align: top;
 	border-radius: 185px;
 	overflow: hidden;
-	background-image: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
 }
 
 .rank-profile .profile-infomation {
