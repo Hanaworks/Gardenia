@@ -76,24 +76,22 @@ export default {
   methods: {
     getPlayerAvatar: function() {
       console.log("request avatar");
-      if (this.player.info.auth == null || this.player.info.auth == 'N/A') return;
+      if (this.player.info.auth == null || this.player.info.auth == "N/A")
+        return;
 
-      var url = "http://localhost:60390/steam/GetPlayerSummaries/" + this.player.info.auth;
+      var url = this.AppConfig.ApiConfig.baseUrl + "/steam/GetPlayerSummaries/" + this.player.info.auth;
 
       fetch(url)
-        //fetch("http://api.hanaworks.cc/rank/player/" + mapname)
         .then(response => response.json())
         .then(data => {
           var _avatar = data.avatarFull;
-
           if (_avatar == null) return;
 
           this.avatar = _avatar;
         });
     },
     refreshMapRecord: function(steamid) {
-      fetch("http://localhost:60390/rank/player/" + steamid)
-        //fetch("http://api.hanaworks.cc/rank/player/" + mapname)
+      fetch(this.AppConfig.ApiConfig.baseUrl + "/rank/player/" + steamid)
         .then(response => response.json())
         .then(data => (this.player = data))
         .then(this.getPlayerAvatar());

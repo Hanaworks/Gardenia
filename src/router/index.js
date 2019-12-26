@@ -1,3 +1,5 @@
+import AppConfig from "../config/baseconfig";
+
 import Vue from 'vue'
 import Router from 'vue-router'
 import Servers from '@/components/Servers'
@@ -6,8 +8,10 @@ import Rank from '@/components/Rank'
 import Last from '@/components/Last'
 import MapRecord from '@/components/MapRecord'
 import PlayerInfo from '@/components/PlayerInfo'
+import Players from '@/components/Players'
 
 Vue.use(Router)
+Vue.prototype.AppConfig = AppConfig
 
 export default new Router({
 	routes: [
@@ -65,6 +69,14 @@ export default new Router({
 			component: PlayerInfo,
 			meta: {
 				title: '个人信息'
+			}
+		},
+		{
+			path: '/Rank/Players/',
+			name: 'Players',
+			component: Players,
+			meta: {
+				title: '玩家排行榜(建设中)'
 			}
 		}
 	]

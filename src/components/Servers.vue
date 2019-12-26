@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     refreshServerList: function() {
-      fetch("http://api.hanaworks.cc/server/list")
+      fetch(this.AppConfig.ApiConfig.baseUrl + "/server/list")
         .then(response => response.json())
         .then(data => (this.server = data));
     },

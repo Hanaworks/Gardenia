@@ -42,8 +42,7 @@ export default {
   },
   methods: {
     refreshRecordList: function() {
-      fetch("http://localhost:60390/rank/last")
-        //fetch("http://api.hanaworks.cc/rank/last")
+        fetch(this.AppConfig.ApiConfig.baseUrl + "/rank/last")
         .then(response => response.json())
         .then(data => (this.records = data));
     }

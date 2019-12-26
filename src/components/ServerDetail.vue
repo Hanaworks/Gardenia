@@ -35,7 +35,7 @@
         </table>
         <div class="info-item map-preview">
           <img
-            :src="`http://s1-static.hanaworks.cc/images/small/${server.info.map}.jpg`"
+            :src="`${AppConfig.StaticUrl}/images/small/${server.info.map}.jpg`"
             :alt="server.info.map"
           >
         </div>
@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     refreshDetail: function(server) {
-      fetch("http://api.hanaworks.cc/server/detail/?address=" + server)
+      fetch(this.AppConfig.ApiConfig.baseUrl + "/server/detail/?address=" + server)
         .then(response => response.json())
         .then(data => (this.server = data));
     },

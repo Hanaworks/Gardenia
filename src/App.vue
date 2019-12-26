@@ -2,21 +2,22 @@
   <main :class="'list-container container ' + rendermode">
     <div class="game-margin"></div>
     <div class="title">{{ $route.meta.title }}</div>
-    <router-view/>
+    <router-view />
   </main>
 </template>
-
+<style>
+@import "./css/hanaworks.css";
+</style>
 <script>
 export default {
   name: "App",
   created: function() {
     var userAgent = navigator.userAgent;
     var isGameBrowser =
-      userAgent.indexOf("Value Client") != -1 ||
-      userAgent.indexOf("Valve Half-Life") != -1;
+      userAgent.indexOf("Value Client") !== -1 ||
+      userAgent.indexOf("Valve Half-Life") !== -1;
 
-      this.rendermode = isGameBrowser ? 'in-game' : 'browser';
-      
+    this.rendermode = isGameBrowser ? "in-game" : "browser";
   }
 };
 </script>

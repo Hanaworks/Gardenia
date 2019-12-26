@@ -47,8 +47,7 @@ export default {
     refreshMapRecord: function(mapname) {
       this.mapname = mapname;
 
-      fetch("http://localhost:60390/rank/map/" + mapname)
-        //fetch("http://api.hanaworks.cc/rank/map/" + mapname)
+        fetch(this.AppConfig.ApiConfig.baseUrl + "/rank/map/" + mapname)
         .then(response => response.json())
         .then(data => (this.records = data));
     }

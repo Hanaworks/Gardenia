@@ -34,7 +34,7 @@ import Promise from "promise-polyfill";
 import { fetch as fetchPolyfill } from "whatwg-fetch";
 
 export default {
-  name: "Rank",
+  name: 'Rank',
   data: function() {
     return {
       records: null
@@ -42,8 +42,7 @@ export default {
   },
   methods: {
     refreshRecordList: function() {
-      fetch("http://localhost:60390/rank/list")
-        //fetch("http://api.hanaworks.cc/rank/list")
+        fetch(this.AppConfig.ApiConfig.baseUrl + "/rank/list")
         .then(response => response.json())
         .then(data => (this.records = data));
     }
