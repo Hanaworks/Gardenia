@@ -46,6 +46,7 @@ a {
 .footer {
 	display: flex;
 	width: 100%;
+	margin-top: 20px !important;
     padding-top: 10px;
     padding-bottom: 20px;
 

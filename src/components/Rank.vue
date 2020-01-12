@@ -7,6 +7,7 @@
           <td class="list-cell map">地图</td>
           <td class="list-cell player">玩家</td>
           <td class="list-cell auth">SteamID</td>
+          <td class="list-cell type">记录类型</td>
           <td class="list-cell time">耗时</td>
           <td class="list-cell date">日期</td>
         </tr>
@@ -21,6 +22,7 @@
             <router-link :to="{ name: 'PlayerInfo', params: { steamid: rec.authid }}">{{ rec.name }}</router-link>
           </td>
           <td class="list-cell auth">{{ rec.authid }}</td>
+          <td class="list-cell type">{{ rec.type == null ? 'N/A' : (rec.type == 'Pro' ? '裸跳' : '存点') }}</td>
           <td class="list-cell time">{{ rec.time }}</td>
           <td class="list-cell date">{{ rec.date }}</td>
         </tr>
